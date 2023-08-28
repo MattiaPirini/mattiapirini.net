@@ -1,0 +1,81 @@
+/* Customizations mattia
+--------------------------------------------- */
+body {
+	background-image: url(../images/bg_low.jpg);
+}
+
+#main-row {
+	overflow: hidden;
+}
+
+.logobox #morphing-logo {
+	margin-top: 3em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	position: relative;
+}
+.logobox #morphing-logo img{position: absolute;}
+
+.logobox #morphing-logo .logoblob {
+	z-index: -50;
+	width: 100%;
+	max-width: 100%;
+}
+
+.logobox #morphing-logo .custom-logo-link {
+	display: block;
+	position: absolute;
+}
+
+.logobox #blobcontainer {
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -100;
+}
+
+.logobox #blobcontainer .blob {
+	position: absolute;
+	width: 2048px;
+	height: 2048px;
+	top: -1024px;
+	left: -500px;
+	z-index: -100;
+}
+
+.site-description {
+	margin-top: 0;
+}
+
+.site-title {
+	margin-bottom: 0;
+}
+
+p {
+	line-height: 1em !important;
+}
+
+h1,
+h2,
+h3 {
+	margin-bottom: 0;
+}
+
+/* a {
+	color: #333447;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+a:active,
+a:visited {
+	color: #333447;
+} */

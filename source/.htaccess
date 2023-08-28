@@ -1,0 +1,9 @@
+<Files *.webp>
+	Header set Vary "Accept-Encoding"
+	AddType "image/webp" .webp
+	AddEncoding webp .webp
+</Files>
+
+RewriteCond %{HTTP:Accept} image/webp
+RewriteCond %{REQUEST_FILENAME}.webp -f
+RewriteRule ^(.*)$ $1.webp [L]
