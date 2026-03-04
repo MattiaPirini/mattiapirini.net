@@ -6,4 +6,19 @@
 
 RewriteCond %{HTTP:Accept} image/webp
 RewriteCond %{REQUEST_FILENAME}.webp -f
-RewriteRule ^(.*)$ $1.webp [L]
+RewriteRule \.(jpe?g|png)$ %{REQUEST_FILENAME}.webp [L]
+
+RewriteEngine On
+
+### WWW & HTTPS
+
+# ensure www.
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ensure https
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+### WWW & HTTPS
